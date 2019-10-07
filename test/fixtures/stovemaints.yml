@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  signup_at: 2019-10-07 07:22:29
+  name: MyString
+  progress: MyString
+  detailed_1: MyString
+  detailed_2: MyString
+
+two:
+  signup_at: 2019-10-07 07:22:29
+  name: MyString
+  progress: MyString
+  detailed_1: MyString
+  detailed_2: MyString
