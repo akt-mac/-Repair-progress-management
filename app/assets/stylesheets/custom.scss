@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* universal */
+/* 共通 */
 
 body {
   padding-top: 60px;
@@ -23,7 +23,7 @@ textarea {
   margin-bottom: 10px;
 }
 
-/* typography */
+/* タイポグラフィ */
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -50,7 +50,7 @@ p {
   line-height: 1.7em;
 }
 
-/* header */
+/* ヘッダー */
 
 #logo {
   float: left;
@@ -66,4 +66,17 @@ p {
 #logo:hover {
   color: #fff;
   text-decoration: none;
+}
+
+/* メンテナンス表 */
+
+#maint-table {
+  th {
+  vertical-align: middle;
+  text-align: center;
+  }
+  td {
+  vertical-align: middle;
+  text-align: center;
+  }
 }
