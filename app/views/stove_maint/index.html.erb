@@ -10,24 +10,26 @@
         <th>本体</th>
         <th>電話</th>
         <th>携帯</th>
-        <th>〒</th>
+        <th>郵便</th>
         <th>住所</th>
         <th>備考</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
+      <% @stovemaints.each do |stovemaint| %>
+        <tr>
+          <th><%= stovemaint.signup_at.strftime('%m/%d') %></th>
+          <th><%= stovemaint.name %></th>
+          <th><%= stovemaint.progress %></th>
+          <th><%= stovemaint.detailed_1 %></th>
+          <th><%= stovemaint.detailed_2 %></th>
+          <th><%= stovemaint.phone %></th>
+          <th><%= stovemaint.mobile %></th>
+          <th><%= stovemaint.postcode %></th>
+          <th><%= stovemaint.address %></th>
+          <th><%= stovemaint.note %></th>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 </div>
