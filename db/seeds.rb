@@ -13,7 +13,7 @@ User.create!(name: "管理者",
                email: email,
                password: password,
                password_confirmation: password)
-puts "completed!"
+puts "users completed!"
 end
 
 Stovemaint.create!(signup_at: "10/1",
@@ -30,6 +30,7 @@ Stovemaint.create!(signup_at: "10/1",
 10.times do |n|
   signup_at = "10/1"
   name = "テストユーザー#{n+1}"
+  progress = ""
   detailed_1 = ""
   detailed_2 = "◯"
   phone = "018-000-0000"
@@ -47,5 +48,5 @@ Stovemaint.create!(signup_at: "10/1",
                      postcode: postcode,
                      address: address,
                      note: note)
-puts "completed!"
+puts "stovemaints completed!"
 end
