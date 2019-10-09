@@ -1,0 +1,31 @@
+<%= form_with(model: @stovemaint, local: true) do |f| %>
+
+  <%= f.label "受付日", class: "label-request" %>
+  <%= f.date_select :signup_at, {}, class: "form-control" %>
+  
+  <%= f.label "名前", class: "label-request" %>
+  <%= f.text_field :name, class: "form-control" %>
+  
+  <div class="form-inline checkbox-form">
+    <%= f.check_box :detailed_1, class: "checkbox inline checkbox-size" %>
+    <%= f.label "　煙突掃除", class: "label-request" %>
+    <span>&emsp;&emsp;&emsp;&emsp;</span>
+    <%= f.check_box :detailed_2, class: "checkbox inline checkbox-size" %>
+    <%= f.label "　本体メンテナンス", class: "label-request" %>
+  </div>
+  
+  <%= f.label "電話", class: "label-request" %>
+  <%= f.text_field :phone, class: "form-control" %>
+  
+  <%= f.label "携帯", class: "label-request" %>
+  <%= f.text_field :mobile, class: "form-control" %>
+  
+  <%= f.label "〒", class: "label-request" %>
+  <%= f.text_field :postcode, class: "form-control" %>
+  
+  <%= f.label "住所", class: "label-request" %>
+  <%= f.text_field :address, class: "form-control" %>
+  
+  <%= f.label "備考", class: "label-request" %>
+  <%= f.text_area :note, class: "rows-3 form-control" %>
+<% end %>
