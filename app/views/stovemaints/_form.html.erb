@@ -1,32 +1,36 @@
-<%= form_with(model: @stovemaint, local: true) do |f| %>
+<%= form_with(model: @stovemaint, url: new_stovemaint_path) do |f| %>
+  
   <div class="form-inline">
     <%= f.label "受付日", class: "label-request" %>
     <%= f.date_field :signup_at, class: "form-control" %>
-
-    <div class="form-check-inline checkbox-form">
+      <span>&emsp;&emsp;&emsp;</span>
       <%= f.check_box :detailed_1, class: "checkbox checkbox-size" %>
       <%= f.label "　煙突掃除", class: "inline label-request" %>
       <span>&emsp;&emsp;&emsp;</span>
       <%= f.check_box :detailed_2, class: "checkbox checkbox-size" %>
       <%= f.label "　本体メンテナンス", class: " inline label-request" %>
-    </div>
   </div>
   
   <%= f.label "名前", class: "label-request" %>
   <%= f.text_field :name, class: "form-control", placeholder: "名前" %>
   
   <%= f.label "電話", class: "label-request" %>
-  <%= f.text_field :phone, class: "form-control", placeholder: "電話" %>
+  <%= f.text_field :phone, class: "form-control", placeholder: "自宅電話番号" %>
   
   <%= f.label "携帯", class: "label-request" %>
-  <%= f.text_field :mobile, class: "form-control", placeholder: "携帯" %>
+  <%= f.text_field :mobile, class: "form-control", placeholder: "携帯電話番号" %>
   
   <%= f.label "〒", class: "label-request" %>
-  <%= f.text_field :postcode, class: "form-control", placeholder: "郵便番号" %>
+  <%= f.text_field :postcode, class: "form-control",
+                              onKeyUp: "AjaxZip3.zip2addr(this,'','addr11','addr11');",
+                              placeholder: "例：0101201" %>
+  <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
   
   <%= f.label "住所", class: "label-request" %>
-  <%= f.text_field :address, class: "form-control", placeholder: "住所" %>
+  <%= f.text_field :address, class: "form-control", name: "addr11" %>
   
   <%= f.label "備考", class: "label-request" %>
-  <%= f.text_area :note, class: "rows-3 form-control", placeholder: "その他連絡事項がれば入力してください。" %>
+  <%= f.text_area :note, class: "rows-3 form-control" %>
+
+  <%= f.submit "登録", class: "btn btn-primary btn-block btn-request" %>
 <% end %>
