@@ -16,6 +16,7 @@ gem 'bootstrap4-datetime-picker-rails'
 gem 'momentjs-rails'
 gem 'font-awesome-rails'
 gem 'jp_prefecture'
+gem 'rails_autolink'
 
 group :development, :test do
   gem 'sqlite3'

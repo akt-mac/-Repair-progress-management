@@ -32,6 +32,7 @@ class StovemaintsController < ApplicationController
                                         :detailed_1,
                                         :detailed_2,
                                         :phone,
+                                        :mobile,
                                         :postcode,
                                         :address,
                                         :note)

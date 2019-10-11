@@ -1,1 +1,52 @@
-<% provide(:tile, 'ストーブメンテ詳細') %>
+<% provide(:title, @stovemaint.name) %>
+
+<h1>お客様情報詳細</h1>
+<div class="row">
+  <div class="col-md-12 customer-index">
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td class="col-md-10 warning"><%= "受付日：#{@stovemaint.signup_at.strftime('%Y/%m/%d')}" %></td>
+        </tr>
+        <tr>
+          <td class="col-md-10 warning"><%= @stovemaint.name %></td>
+        </tr>
+        <tr>
+          <td class="col-md-10 warning">進捗状況：
+            <% if @stovemaint.progress == '1' %>
+              <label class="label label-success">完了</label>
+            <% else %>
+              <label class="label label-danger">未完</label>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td class="col-md-10 warning">
+            <% if @stovemaint.detailed_1 == '1' %>
+              <label class="label label-danger">煙突</label>
+            <% end %>
+            <% if @stovemaint.detailed_2 == '1' %>
+              <label class="label label-warning">本体</label>
+            <% end %>
+          </td>
+        <tr>
+          <td class="col-md-10 warning">
+            <%= "電話：#{@stovemaint.phone}" %>
+            <br>
+            <%= "携帯：#{@stovemaint.mobile}" %>
+          </td>
+        <tr>
+          <td class="col-md-10 warning">
+            <%= "〒#{@stovemaint.postcode}" %>
+            <br>
+            <%= @stovemaint.address %>
+          </td>
+        <tr>
+          <td class="col-md-10 warning">
+            <%= auto_link(safe_join(@stovemaint.note.split("\n"), tag(:br))) %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,4 +1,6 @@
 <% provide(:title, 'ストーブメンテ一覧') %>
+
+<h1>ストーブメンテナンス情報一覧</h1>
 <div>
   <%= link_to "新規登録", new_stovemaint_path, class: "btn btn-lg btn-primary pull-right" %>
 </div>
@@ -11,9 +13,9 @@
         <th>進捗</th>
         <th>煙突</th>
         <th>本体</th>
-        <th>電話</th>
-        <th>携帯</th>
-        <th>郵便</th>
+        <!--<th>電話</th>-->
+        <!--<th>携帯</th>-->
+        <!--<th>郵便</th>-->
         <th>住所</th>
         <th>備考</th>
       </tr>
@@ -37,11 +39,15 @@
             <th></th>
           <% end %>
           
-          <th><%= stovemaint.phone %></th>
-          <th><%= stovemaint.mobile %></th>
-          <th><%= stovemaint.postcode %></th>
+          <!--<th><%= stovemaint.phone %></th>-->
+          <!--<th><%= stovemaint.mobile %></th>-->
+          <!--<th><%= stovemaint.postcode %></th>-->
           <th><%= stovemaint.address %></th>
-          <th><%= stovemaint.note %></th>
+          <th>
+            <% if stovemaint.note? %>
+              <label class="label label-success">備考</label>
+            <% end %>
+          </th>
         </tr>
       <% end %>
     </tbody>
