@@ -22,10 +22,21 @@
       <% @stovemaints.each do |stovemaint| %>
         <tr>
           <th><%= stovemaint.signup_at.strftime('%m/%d') %></th>
-          <th><%= stovemaint.name %></th>
+          <th><%= link_to stovemaint.name, stovemaint_path(stovemaint) %></th>
           <th><%= stovemaint.progress %></th>
-          <th><%= stovemaint.detailed_1 %></th>
-          <th><%= stovemaint.detailed_2 %></th>
+          
+          <% if stovemaint.detailed_1 == '1' %>
+            <th><label class="label label-danger">煙突</label></th>
+          <% else %>
+            <th></th>
+          <% end %>
+          
+          <% if stovemaint.detailed_2 == '1' %>
+            <th><label class="label label-warning">本体</label></th>
+          <% else %>
+            <th></th>
+          <% end %>
+          
           <th><%= stovemaint.phone %></th>
           <th><%= stovemaint.mobile %></th>
           <th><%= stovemaint.postcode %></th>

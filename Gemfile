@@ -12,9 +12,10 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks',   '~> 5'
 gem 'jbuilder',     '~> 2.5'
-gem "bootstrap4-datetime-picker-rails"
+gem 'bootstrap4-datetime-picker-rails'
 gem 'momentjs-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+gem 'jp_prefecture'
 
 group :development, :test do
   gem 'sqlite3'

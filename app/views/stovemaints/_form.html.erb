@@ -1,12 +1,14 @@
 <%= form_with(model: @stovemaint, url: stovemaints_path, local: true) do |f| %>
   <%= render 'shared/error_messages' %>
-  <div class="form-inline">
+
     <%= f.label "受付日", class: "label-request" %>
     <%= f.date_field :signup_at, class: "form-control" %>
-      <span>&emsp;&emsp;&emsp;</span>
+    
+    <div class="form-inline checkbox-form">
+      <span>&emsp;</span>
       <%= f.check_box :detailed_1, class: "checkbox checkbox-size" %>
       <%= f.label "　煙突掃除", class: "inline label-request" %>
-      <span>&emsp;&emsp;&emsp;</span>
+      <span>&emsp;&emsp;&emsp;&emsp;</span>
       <%= f.check_box :detailed_2, class: "checkbox checkbox-size" %>
       <%= f.label "　本体メンテナンス", class: " inline label-request" %>
   </div>
@@ -21,13 +23,10 @@
   <%= f.text_field :mobile, class: "form-control", placeholder: "携帯電話番号" %>
   
   <%= f.label "〒", class: "label-request" %>
-  <%= f.text_field :postcode, class: "form-control",
-                              onKeyUp: "AjaxZip3.zip2addr(this,'','addr11','addr11');",
-                              placeholder: "例：0101201" %>
-  <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+  <%= f.text_field :postcode, class: "form-control", placeholder: "例：0101201" %>
   
   <%= f.label "住所", class: "label-request" %>
-  <%= f.text_field :address, class: "form-control", name: "addr11" %>
+  <%= f.text_field :address, class: "form-control", placeholder: "住所" %>
   
   <%= f.label "備考", class: "label-request" %>
   <%= f.text_area :note, class: "rows-3 form-control" %>

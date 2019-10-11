@@ -12,7 +12,7 @@ class StovemaintsController < ApplicationController
     @stovemaint = Stovemaint.new(stovemaint_params)
     if @stovemaint.save
       flash[:success] = "メンテナンス依頼を登録しました。"
-      redirect_to stove_maint_index_path
+      redirect_to stovemaints_path
     else
       render :new
     end
@@ -35,5 +35,8 @@ class StovemaintsController < ApplicationController
                                         :postcode,
                                         :address,
                                         :note)
+    end
+    
+    def address11
     end
 end
