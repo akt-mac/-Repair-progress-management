@@ -1,5 +1,5 @@
-<%= form_with(model: @stovemaint, url: new_stovemaint_path) do |f| %>
-  
+<%= form_with(model: @stovemaint, url: stovemaints_path, local: true) do |f| %>
+  <%= render 'shared/error_messages' %>
   <div class="form-inline">
     <%= f.label "受付日", class: "label-request" %>
     <%= f.date_field :signup_at, class: "form-control" %>

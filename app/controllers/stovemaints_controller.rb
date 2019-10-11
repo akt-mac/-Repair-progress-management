@@ -1,16 +1,16 @@
 class StovemaintsController < ApplicationController
   
   def show
-    @stavemaint = Stovemaint.find(params[:id])
+    @stovemaint = Stovemaint.find(params[:id])
   end
   
   def new
-    @stavemaint = Stovemaint.new
+    @stovemaint = Stovemaint.new
   end
   
   def create
-    @stavemaint = Stovemaint.new(stavemaint_params)
-    if @stavemaint.save
+    @stovemaint = Stovemaint.new(stovemaint_params)
+    if @stovemaint.save
       flash[:success] = "メンテナンス依頼を登録しました。"
       redirect_to stove_maint_index_path
     else
@@ -26,7 +26,7 @@ class StovemaintsController < ApplicationController
   private
   
     def stovemaint_params
-      params.requie(:stavemaint).permit(:signup_at,
+      params.require(:stovemaint).permit(:signup_at,
                                         :name,
                                         :progress,
                                         :detailed_1,
